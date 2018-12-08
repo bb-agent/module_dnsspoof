@@ -20,7 +20,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>FruityWifi</title>
+<title>BlackBulb</title>
 <script src="../js/jquery.js"></script>
 <script src="../js/jquery-ui.js"></script>
 <link rel="stylesheet" href="../css/jquery-ui.css" />
@@ -62,20 +62,20 @@ $action = $_GET["action"];
 // SAVE DNSSPOOF HOSTS
 if ($newdata != "") { 
     //$newdata = preg_replace(13,  "", $newdata);
-    $exec = "$bin_echo '$newdata' > /usr/share/fruitywifi/conf/spoofhost.conf";
+    $exec = "$bin_echo '$newdata' > /usr/share/blackbulb/conf/spoofhost.conf";
     //exec("$bin_danger \"$exec\"", $output); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
     
-    $exec = "$bin_dos2unix /usr/share/fruitywifi/conf/spoofhost.conf";
+    $exec = "$bin_dos2unix /usr/share/blackbulb/conf/spoofhost.conf";
     //exec("$bin_danger \"$exec\"", $output); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 }
 
 // DELETE LOG
 if ($logfile != "" and $action == "delete") {
     $exec = "$bin_rm ".$mod_logs_history.$logfile.".log";
     //exec("$bin_danger \"$exec\"", $dump); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 }
 
 ?>
@@ -167,7 +167,7 @@ if ($logfile != "" and $action == "delete") {
         <input type=submit value="save">
         <br><br>
         <?
-            $filename = "/usr/share/fruitywifi/conf/spoofhost.conf";
+            $filename = "/usr/share/blackbulb/conf/spoofhost.conf";
 
             /*
             $fh = fopen($filename, "r") or die("Could not open file.");

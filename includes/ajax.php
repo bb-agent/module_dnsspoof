@@ -40,14 +40,14 @@ if ($type == "logs") {
 if ($type == "hosts") {
 
     if ($newdata != "") { $newdata = ereg_replace(13,  "", $newdata);
-        $exec = "/bin/echo '$newdata' > /usr/share/fruitywifi/conf/spoofhost.conf";
-        //exec("/usr/share/FruityWifi/www/bin/danger \"" . $exec . "\"", $output); //DEPRECATED
-	exec_fruitywifi($exec);
+        $exec = "/bin/echo '$newdata' > /usr/share/blackbulb/conf/spoofhost.conf";
+        //exec("/usr/share/BlackBulb/www/bin/danger \"" . $exec . "\"", $output); //DEPRECATED
+	exec_blackbulb($exec);
     }
 
-    $exec = "cat /usr/share/fruitywifi/conf/spoofhost.conf";
-    //exec("/usr/share/FruityWifi/www/bin/danger \"" . $exec . "\"", $dump); //DEPRECATED
-    exec_fruitywifi($exec);
+    $exec = "cat /usr/share/blackbulb/conf/spoofhost.conf";
+    //exec("/usr/share/BlackBulb/www/bin/danger \"" . $exec . "\"", $dump); //DEPRECATED
+    exec_blackbulb($exec);
     
     echo json_encode($dump);
 

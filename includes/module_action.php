@@ -41,20 +41,20 @@ if($service == "dnsspoof") {
         // COPY LOG
         $exec = "$bin_cp $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
         //exec("$bin_danger \"$exec\"", $dump); //DEPRECATED
-	exec_fruitywifi($exec);
+	exec_blackbulb($exec);
 	
         $exec = "$bin_echo '' > $mod_logs";
         //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-	exec_fruitywifi($exec);
+	exec_blackbulb($exec);
 	
-        $exec = "$bin_dnsspoof -i $io_action -f /usr/share/fruitywifi/conf/spoofhost.conf > /dev/null 2> $mod_logs &";
+        $exec = "$bin_dnsspoof -i $io_action -f /usr/share/blackbulb/conf/spoofhost.conf > /dev/null 2> $mod_logs &";
         //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-	exec_fruitywifi($exec);
+	exec_blackbulb($exec);
 	
     } else if($action == "stop") {
         $exec = "$bin_killall dnsspoof";
         //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-	exec_fruitywifi($exec);
+	exec_blackbulb($exec);
     }
 }
 
@@ -62,11 +62,11 @@ if ($install == "install_$mod_name") {
 
     $exec = "chmod 755 install.sh";
     //exec("$bin_danger \"$exec\"" ); //DERECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     $exec = "$bin_sudo ./install.sh > $log_path/install.txt &";
     //exec("$bin_danger \"$exec\"" ); //DEPRECATED
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
     
     header('Location: ../../install.php?module='.$mod_name);
     exit;
